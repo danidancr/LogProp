@@ -1,0 +1,80 @@
+[
+    {
+        "assunto": "proposicoes",
+        "acertos": 1,
+        "erros": 0,
+        "tempo": 7
+    },
+    {
+        "assunto": "tabelas",
+        "acertos": 1,
+        "erros": 0,
+        "tempo": 9
+    },
+    {
+        "assunto": "proposicoes",
+        "acertos": 2,
+        "erros": 0,
+        "tempo": 9
+    },
+    {
+        "assunto": "proposicoes",
+        "acertos": 1,
+        "erros": 1,
+        "tempo": 16
+    },
+    {
+        "assunto": "proposicoes",
+        "acertos": 3,
+        "erros": 2,
+        "tempo": 31
+    },
+    {
+        "assunto": "proposicoes",
+        "acertos": 4,
+        "erros": 1,
+        "tempo": 27
+    },
+    {
+        "assunto": "proposicoes",
+        "acertos": 3,
+        "erros": 2,
+        "tempo": 23
+    },
+    {
+        "assunto": "proposicoes",
+        "acertos": 3,
+        "erros": 2,
+        "tempo": 18
+    },
+    {
+        "assunto": "proposicoes",
+        "acertos": 5,
+        "erros": 0,
+        "tempo": 25
+    },
+    {
+        "assunto": "proposicoes",
+        "acertos": 2,
+        "erros": 4,
+        "tempo": 23
+    },
+    {
+        "assunto": "proposicoes",
+        "acertos": 2,
+        "erros": 4,
+        "tempo": 24
+    },
+    {
+        "assunto": "proposicoes",
+        "acertos": 5,
+        "erros": 0,
+        "tempo": 23
+    },
+    {
+        "assunto": "tabelas",
+        "acertos": 5,
+        "erros": 0,
+        "tempo": 18
+    }
+]

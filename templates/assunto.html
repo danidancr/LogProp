@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício - {{ assunto_id }}</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(160deg, #3abd68, #3b82f6);
+            background-attachment: fixed;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+
+        h1 {
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .progress-container {
+            width: 100%;
+            background: #e5e7eb;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 16px;
+            margin-bottom: 20px;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background-color: #3b82f6;
+            transition: width 0.3s ease-in-out;
+        }
+
+        .options label {
+            display: block;
+            margin: 10px 0;
+            padding: 12px 16px;
+            background: #e8e8e8;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .options label:hover {
+            background: #d0d0d0;
+        }
+
+        .feedback {
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .button {
+            margin-top: 20px;
+            padding: 12px 24px;
+            border: none;
+            background: #3b82f6;
+            color: white;
+            font-size: 1em;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .button:disabled {
+            background: #aaa;
+            cursor: not-allowed;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .home-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 24px;
+            text-decoration: none;
+            background-color: #007BFF;
+            color: white;
+            font-weight: bold;
+            border-radius: 10px;
+            transition: background 0.3s;
+        }
+
+        .home-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Exercícios</h1>
+
+    <!-- Área do quiz -->
+    <div class="card" id="quiz">
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <div id="perguntaTexto"></div>
+        <div class="options" id="opcoes"></div>
+        <button class="button" onclick="confirmarResposta()">Confirmar</button>
+        <div class="feedback" id="feedback"></div>
+    </div>
+
+    <!-- Resultado final -->
+    <div class="card hidden" id="resultadoFinal">
+        <h2>Resultado Final</h2>
+        <p>✅ Acertos: <span id="acertos"></span></p>
+        <p>❌ Erros: <span id="erros"></span></p>
+        <p>⏱️ Tempo total: <span id="tempoTotal"></span> segundos</p>
+        <a href="/home" id="homeButton" class="home-button hidden">🏠 Voltar para Home</a>
+    </div>
+
+    <script>
+        const perguntas = {{ perguntas | tojson }};
+        let indice = 0;
+        let acertos = 0;
+        let erros = 0;
+        let inicioTempo = Date.now();
+
+        function exibirPergunta() {
+            const pergunta = perguntas[indice];
+            document.getElementById('feedback').textContent = '';
+            document.getElementById('perguntaTexto').innerHTML = pergunta.enunciado;
+            document.getElementById('opcoes').innerHTML = '';
+
+            pergunta.opcoes.forEach((opcao, i) => {
+                document.getElementById('opcoes').innerHTML += `
+                    <label>
+                        <input type="radio" name="resposta" value="${i}"> ${opcao}
+                    </label>`;
+            });
+
+            // Atualiza barra de progresso
+            document.getElementById("progressBar").style.width = `${((indice) / perguntas.length) * 100}%`;
+        }
+
+        function confirmarResposta() {
+            const selecionada = document.querySelector('input[name="resposta"]:checked');
+            if (!selecionada) {
+                alert("Selecione uma opção!");
+                return;
+            }
+
+            const resposta = parseInt(selecionada.value);
+            const correta = perguntas[indice].correta;
+            const feedback = document.getElementById('feedback');
+
+            if (resposta === correta) {
+                feedback.textContent = "✅ Correto!";
+                feedback.style.color = "green";
+                acertos++;
+            } else {
+                feedback.textContent = "❌ Errado. " + perguntas[indice].explicacao;
+                feedback.style.color = "red";
+                erros++;
+            }
+
+            setTimeout(() => {
+                indice++;
+                if (indice < perguntas.length) {
+                    exibirPergunta();
+                } else {
+                    finalizar();
+                }
+            }, 1500);
+        }
+
+        function finalizar() {
+            document.getElementById("quiz").classList.add("hidden");
+            document.getElementById("resultadoFinal").classList.remove("hidden");
+
+            const tempoFinal = Math.round((Date.now() - inicioTempo) / 1000);
+            document.getElementById("acertos").textContent = acertos;
+            document.getElementById("erros").textContent = erros;
+            document.getElementById("tempoTotal").textContent = tempoFinal;
+
+            // Finaliza barra
+            document.getElementById("progressBar").style.width = `100%`;
+
+            const dados = {
+                acertos,
+                erros,
+                tempo: tempoFinal,
+                assunto: "{{ assunto_id }}"
+            };
+
+            fetch("/salvar_relatorio", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(dados)
+            })
+            .then(res => {
+                if (res.ok) {
+                    document.getElementById("homeButton").classList.remove("hidden");
+                } else {
+                    alert("Erro ao salvar relatório.");
+                }
+            });
+        }
+
+        // Inicia o quiz
+        exibirPergunta();
+    </script>
+</body>
+</html>

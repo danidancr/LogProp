@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>+LogProp</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;900&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <header>
+        <div class="interface">
+            <div class="flex-header">
+                <h1 class="titulo-principal">+LogProp</h1>
+                <div class="menu-usuario">
+                    <div class="usuario-logado">
+                        <img src="{{ url_for('static', filename='imagem/icone-usuario.png') }}" alt="Ícone do usuário" class="icone-usuario" />
+                        <span>{{ user.name }}</span>
+                    </div>
+                    <nav class="dropdown-menu">
+                        <ul>
+                            <li><a href="{{ url_for('minha_conta') }}">Minha Conta</a></li>
+                            <li><a href="{{ url_for('relatorio') }}">Relatório</a></li>
+                            <li><a href="{{ url_for('sair') }}">Sair da Conta</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        {% for assunto in assuntos %}
+        <section class="{{ 'assunto-azul' if loop.index % 2 == 0 else 'assunto-branco' }}">
+            <div class="interface">
+                <div class="flex">
+                    <div class="titulo">
+                        <h1>{{ assunto[0] }}</h1>
+                        <p>{{ assunto[1] }}</p>
+                        <div class="btn-questoes">
+                            <a href="{{ url_for('assunto', assunto_id=assunto[2]) }}" class="botao">Comece já</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {% endfor %}
+    </main>
+
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google-site-verification" content="fDGLx2JmSu8eycDkTv1D4FndP4PnZ4ZeX7vDtjwDiwo" />
+    <title>+LogProp</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;900&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <header>
+        <div class="interface">
+            <h1 class="titulo-principal">+LogProp</h1>
+            <div class="botoes">
+                <a href="{{ url_for('entrar') }}" class="botao entrar">Entrar</a>
+                <a href="{{ url_for('cadastrar') }}" class="botao cadastrar">Cadastrar-se</a>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <section class="bem-vindo">
+            <div class="interface">
+                <div class="flex">
+                    <div class="txt-bem-vindo">
+                        <h1>Bem-vindo ao +LogProp</h1>
+                        <p>Aprenda Matemática Discreta na prática e domine os fundamentos que impulsionam a lógica e a computação através da exercitação.</p>
+                    </div>
+                    <div class="img-bem-vindo">
+                        <img src="{{ url_for('static', filename='imagem/seja bem vindo.png') }}" alt="Ilustração do bem-vindo" class="imagem-responsiva" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="como-funciona">
+            <div class="interface">
+                <h2>Como funciona?</h2>
+                <p>+LogProp é um ambiente para os alunos que exercitem os conteúdos de lógica proposicional. As questões foram retiradas do banco de questões do ENADE e POSCOMP. Cada nível possui 10 questões, e é necessário completá-lo 5 vezes para avançar. Em caso de erro, o estudante poderá consultar nossa IA para obter uma explicação.</p>
+            </div>
+        </section>
+            
+        <section class="sobre-nos">
+            <div class="interface">
+                <h2>Sobre nós</h2>
+                <p>A plataforma +LogProp foi desenvolvida por estudantes da UEA-EST como avaliação da matéria de Fundamentos de Software Educacional. Diante da alta taxa de retenção em Matemática Discreta nos cursos de Computação, esta plataforma visa ajudar os alunos por meio de uma metodologia sequencial, com feedbacks claros e eficazes.</p>
+            </div>
+        </section>
+
+        <section class="sobre-dev">
+            <div class="interface">
+                <h2>Sobre os Desenvolvedores</h2>
+                <div class="dev-grid">
+                    <div class="dev-card">
+                        <img src="{{ url_for('static', filename='imagem/Arthur.png') }}" alt="Foto do desenvolvedor Arthur" class="imagem-responsiva" />
+                        <h3>Arthur</h3>
+                        <p>Design & Desenvolvimento</p>
+                    </div>
+                    <div class="dev-card">
+                        <img src="{{ url_for('static', filename='imagem/Daniela.png') }}" alt="Foto da desenvolvedora Daniela" class="imagem-responsiva" />
+                        <h3>Daniela</h3>
+                        <p>Design & Desenvolvimento</p>
+                    </div>
+                    <div class="dev-card">
+                        <img src="{{ url_for('static', filename='imagem/Emanuele.png') }}" alt="Foto da desenvolvedora Emanuele" class="imagem-responsiva" />
+                        <h3>Emanuele</h3>
+                        <p>Design & Desenvolvimento</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

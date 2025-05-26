@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Relatório de Desempenho</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f4f8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 700px;
+            margin-bottom: 20px;
+        }
+        h1, h2 {
+            margin-top: 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        .button {
+            padding: 10px 20px;
+            background: #58cc02;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .button:hover {
+            background: #45a800;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Seu Relatório</h1>
+
+    <div class="card">
+        <h2>Resumo Geral</h2>
+        <p><strong>Total de questões respondidas:</strong> {{ total_questoes }}</p>
+        <p><strong>Acertos:</strong> {{ acertos }}</p>
+        <p><strong>Erros:</strong> {{ erros }}</p>
+        <p><strong>Tempo médio por questão:</strong> {{ tempo_medio }}</p>
+        <p><strong>Desempenho Geral:</strong> {{ progresso_geral }}%</p>
+        <p><strong>Feedback:</strong> {{ feedback }}</p>
+        <button class="button" onclick="baixarRelatorio()">📥 Baixar Relatório</button>
+    </div>
+
+    <div class="card">
+        <h2>Desempenho por Assunto</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Assunto</th>
+                    <th>Acertos</th>
+                    <th>Erros</th>
+                    <th>% de Acertos</th>
+                    <th>Tempo (s)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in por_assunto %}
+                <tr>
+                    <td>{{ item.assunto }}</td>
+                    <td>{{ item.acertos }}</td>
+                    <td>{{ item.erros }}</td>
+                    <td>{{ item.percentual_acertos }}%</td>
+                    <td>{{ item.tempo }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function baixarRelatorio() {
+            const dados = {
+                total_questoes: {{ total_questoes }},
+                acertos: {{ acertos }},
+                erros: {{ erros }},
+                tempo_medio: "{{ tempo_medio }}",
+                progresso_geral: {{ progresso_geral }},
+                feedback: "{{ feedback }}",
+                por_assunto: {{ por_assunto | tojson }}
+            };
+
+            const blob = new Blob([JSON.stringify(dados, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = "relatorio.json";
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,453 @@
+[
+  {
+    "id": "proposicoes-01",
+    "titulo": "Proposições Simples",
+    "enunciado": "Qual das seguintes é uma proposição?",
+    "opcoes": [
+      "Feche a porta.",
+      "RESPOSTA CERTA",
+      "Por favor, sente-se.",
+      "Vamos sair?"
+    ],
+    "correta": 1,
+    "explicacao": "A frase 'Está chovendo.' é uma proposição pois pode ser verdadeira ou falsa.",
+    "nivel": "fácil",
+    "categoria": "proposicoes"
+  },
+  {
+    "id": "proposicoes-02",
+    "titulo": "Proposições Simples",
+    "enunciado": "Qual das seguintes é uma proposição? PREPOSICAO 2",
+    "opcoes": [
+      "Feche a porta.",
+      "RESPOSTA CERTA",
+      "Por favor, sente-se.",
+      "Vamos sair?"
+    ],
+    "correta": 1,
+    "explicacao": "A frase 'Está chovendo.' é uma proposição pois pode ser verdadeira ou falsa.",
+    "nivel": "fácil",
+    "categoria": "proposicoes"
+  },
+  {
+    "id": "proposicoes-03",
+    "titulo": "Proposições Simples",
+    "enunciado": "Qual das seguintes é uma proposição? PREPOSICAO 2",
+    "opcoes": [
+      "Feche a porta.",
+      "RESPOSTA CERTA",
+      "Por favor, sente-se.",
+      "Vamos sair?"
+    ],
+    "correta": 1,
+    "explicacao": "A frase 'Está chovendo.' é uma proposição pois pode ser verdadeira ou falsa.",
+    "nivel": "fácil",
+    "categoria": "proposicoes"
+  },
+  {
+    "id": "proposicoes-04",
+    "titulo": "Proposições Simples",
+    "enunciado": "Qual das seguintes é uma proposição? PREPOSICAO 2",
+    "opcoes": [
+      "Feche a porta.",
+      "RESPOSTA CERTA",
+      "Por favor, sente-se.",
+      "Vamos sair?"
+    ],
+    "correta": 1,
+    "explicacao": "A frase 'Está chovendo.' é uma proposição pois pode ser verdadeira ou falsa.",
+    "nivel": "fácil",
+    "categoria": "proposicoes"
+  },
+  {
+    "id": "proposicoes-05",
+    "titulo": "Proposições Simples",
+    "enunciado": "Qual das seguintes é uma proposição? PREPOSICAO 2",
+    "opcoes": [
+      "Feche a porta.",
+      "RESPOSTA CERTA",
+      "Por favor, sente-se.",
+      "Vamos sair?"
+    ],
+    "correta": 1,
+    "explicacao": "A frase 'Está chovendo.' é uma proposição pois pode ser verdadeira ou falsa.",
+    "nivel": "fácil",
+    "categoria": "proposicoes"
+  },
+  {
+    "id": "tabelas-01",
+    "titulo": "Proposições Simples",
+    "enunciado": "Qual das seguintes é uma proposição?",
+    "opcoes": [
+      "Feche a porta.",
+      "RESPOSTA CERTA",
+      "Por favor, sente-se.",
+      "Vamos sair?"
+    ],
+    "correta": 1,
+    "explicacao": "A frase 'Está chovendo.' é uma proposição pois pode ser verdadeira ou falsa.",
+    "nivel": "fácil",
+    "categoria": "proposicoes"
+  },
+  {
+    "id": "tabelas-02",
+    "titulo": "Proposições Simples",
+    "enunciado": "Qual das seguintes é uma proposição? PREPOSICAO 2",
+    "opcoes": [
+      "Feche a porta.",
+      "RESPOSTA CERTA",
+      "Por favor, sente-se.",
+      "Vamos sair?"
+    ],
+    "correta": 1,
+    "explicacao": "A frase 'Está chovendo.' é uma proposição pois pode ser verdadeira ou falsa.",
+    "nivel": "fácil",
+    "categoria": "proposicoes"
+  },
+  {
+    "id": "tabelas-03",
+    "titulo": "Proposições Simples",
+    "enunciado": "Qual das seguintes é uma proposição? PREPOSICAO 2",
+    "opcoes": [
+      "Feche a porta.",
+      "RESPOSTA CERTA",
+      "Por favor, sente-se.",
+      "Vamos sair?"
+    ],
+    "correta": 1,
+    "explicacao": "A frase 'Está chovendo.' é uma proposição pois pode ser verdadeira ou falsa.",
+    "nivel": "fácil",
+    "categoria": "proposicoes"
+  },
+  {
+    "id": "tabelas-04",
+    "titulo": "Proposições Simples",
+    "enunciado": "Qual das seguintes é uma proposição? PREPOSICAO 2",
+    "opcoes": [
+      "Feche a porta.",
+      "RESPOSTA CERTA",
+      "Por favor, sente-se.",
+      "Vamos sair?"
+    ],
+    "correta": 1,
+    "explicacao": "A frase 'Está chovendo.' é uma proposição pois pode ser verdadeira ou falsa.",
+    "nivel": "fácil",
+    "categoria": "proposicoes"
+  },
+  {
+    "id": "tabelas-05",
+    "titulo": "Proposições Simples",
+    "enunciado": "Qual das seguintes é uma proposição? PREPOSICAO 2",
+    "opcoes": [
+      "Feche a porta.",
+      "RESPOSTA CERTA",
+      "Por favor, sente-se.",
+      "Vamos sair?"
+    ],
+    "correta": 1,
+    "explicacao": "A frase 'Está chovendo.' é uma proposição pois pode ser verdadeira ou falsa.",
+    "nivel": "fácil",
+    "categoria": "proposicoes"
+  },
+  {
+    "id": "todos-01",
+    "titulo": "Proposições Simples",
+    "enunciado": "Qual das seguintes é uma proposição?",
+    "opcoes": [
+      "Feche a porta.",
+      "RESPOSTA CERTA",
+      "Por favor, sente-se.",
+      "Vamos sair?"
+    ],
+    "correta": 1,
+    "explicacao": "A frase 'Está chovendo.' é uma proposição pois pode ser verdadeira ou falsa.",
+    "nivel": "fácil",
+    "categoria": "proposicoes"
+  },
+  {
+    "id": "todos-02",
+    "titulo": "Proposições Simples",
+    "enunciado": "Qual das seguintes é uma proposição? PREPOSICAO 2",
+    "opcoes": [
+      "Feche a porta.",
+      "RESPOSTA CERTA",
+      "Por favor, sente-se.",
+      "Vamos sair?"
+    ],
+    "correta": 1,
+    "explicacao": "A frase 'Está chovendo.' é uma proposição pois pode ser verdadeira ou falsa.",
+    "nivel": "fácil",
+    "categoria": "proposicoes"
+  },
+  {
+    "id": "todos-03",
+    "titulo": "Proposições Simples",
+    "enunciado": "Qual das seguintes é uma proposição? PREPOSICAO 2",
+    "opcoes": [
+      "Feche a porta.",
+      "RESPOSTA CERTA",
+      "Por favor, sente-se.",
+      "Vamos sair?"
+    ],
+    "correta": 1,
+    "explicacao": "A frase 'Está chovendo.' é uma proposição pois pode ser verdadeira ou falsa.",
+    "nivel": "fácil",
+    "categoria": "proposicoes"
+  },
+  {
+    "id": "todos-04",
+    "titulo": "Proposições Simples",
+    "enunciado": "Qual das seguintes é uma proposição? PREPOSICAO 2",
+    "opcoes": [
+      "Feche a porta.",
+      "RESPOSTA CERTA",
+      "Por favor, sente-se.",
+      "Vamos sair?"
+    ],
+    "correta": 1,
+    "explicacao": "A frase 'Está chovendo.' é uma proposição pois pode ser verdadeira ou falsa.",
+    "nivel": "fácil",
+    "categoria": "proposicoes"
+  },
+  {
+    "id": "todos-05",
+    "titulo": "Proposições Simples",
+    "enunciado": "Qual das seguintes é uma proposição? PREPOSICAO 2",
+    "opcoes": [
+      "Feche a porta.",
+      "RESPOSTA CERTA",
+      "Por favor, sente-se.",
+      "Vamos sair?"
+    ],
+    "correta": 1,
+    "explicacao": "A frase 'Está chovendo.' é uma proposição pois pode ser verdadeira ou falsa.",
+    "nivel": "fácil",
+    "categoria": "proposicoes"
+  },
+  {
+    "id": "todos-06",
+    "titulo": "Proposições Simples",
+    "enunciado": "Qual das seguintes é uma proposição?",
+    "opcoes": [
+      "Feche a porta.",
+      "RESPOSTA CERTA",
+      "Por favor, sente-se.",
+      "Vamos sair?"
+    ],
+    "correta": 1,
+    "explicacao": "A frase 'Está chovendo.' é uma proposição pois pode ser verdadeira ou falsa.",
+    "nivel": "fácil",
+    "categoria": "proposicoes"
+  },
+  {
+    "id": "todos-07",
+    "titulo": "Proposições Simples",
+    "enunciado": "Qual das seguintes é uma proposição? PREPOSICAO 2",
+    "opcoes": [
+      "Feche a porta.",
+      "RESPOSTA CERTA",
+      "Por favor, sente-se.",
+      "Vamos sair?"
+    ],
+    "correta": 1,
+    "explicacao": "A frase 'Está chovendo.' é uma proposição pois pode ser verdadeira ou falsa.",
+    "nivel": "fácil",
+    "categoria": "proposicoes"
+  },
+  {
+    "id": "todos-08",
+    "titulo": "Proposições Simples",
+    "enunciado": "Qual das seguintes é uma proposição? PREPOSICAO 2",
+    "opcoes": [
+      "Feche a porta.",
+      "RESPOSTA CERTA",
+      "Por favor, sente-se.",
+      "Vamos sair?"
+    ],
+    "correta": 1,
+    "explicacao": "A frase 'Está chovendo.' é uma proposição pois pode ser verdadeira ou falsa.",
+    "nivel": "fácil",
+    "categoria": "proposicoes"
+  },
+  {
+    "id": "todos-09",
+    "titulo": "Proposições Simples",
+    "enunciado": "Qual das seguintes é uma proposição? PREPOSICAO 2",
+    "opcoes": [
+      "Feche a porta.",
+      "RESPOSTA CERTA",
+      "Por favor, sente-se.",
+      "Vamos sair?"
+    ],
+    "correta": 1,
+    "explicacao": "A frase 'Está chovendo.' é uma proposição pois pode ser verdadeira ou falsa.",
+    "nivel": "fácil",
+    "categoria": "proposicoes"
+  },
+  {
+    "id": "todos-10",
+    "titulo": "Proposições Simples",
+    "enunciado": "Qual das seguintes é uma proposição? PREPOSICAO 2",
+    "opcoes": [
+      "Feche a porta.",
+      "RESPOSTA CERTA",
+      "Por favor, sente-se.",
+      "Vamos sair?"
+    ],
+    "correta": 1,
+    "explicacao": "A frase 'Está chovendo.' é uma proposição pois pode ser verdadeira ou falsa.",
+    "nivel": "fácil",
+    "categoria": "proposicoes"
+  },
+  {
+    "id": "todos-11",
+    "titulo": "Proposições Simples",
+    "enunciado": "Qual das seguintes é uma proposição?",
+    "opcoes": [
+      "Feche a porta.",
+      "RESPOSTA CERTA",
+      "Por favor, sente-se.",
+      "Vamos sair?"
+    ],
+    "correta": 1,
+    "explicacao": "A frase 'Está chovendo.' é uma proposição pois pode ser verdadeira ou falsa.",
+    "nivel": "fácil",
+    "categoria": "proposicoes"
+  },
+  {
+    "id": "todos-12",
+    "titulo": "Proposições Simples",
+    "enunciado": "Qual das seguintes é uma proposição? PREPOSICAO 2",
+    "opcoes": [
+      "Feche a porta.",
+      "RESPOSTA CERTA",
+      "Por favor, sente-se.",
+      "Vamos sair?"
+    ],
+    "correta": 1,
+    "explicacao": "A frase 'Está chovendo.' é uma proposição pois pode ser verdadeira ou falsa.",
+    "nivel": "fácil",
+    "categoria": "proposicoes"
+  },
+  {
+    "id": "todos-13",
+    "titulo": "Proposições Simples",
+    "enunciado": "Qual das seguintes é uma proposição? PREPOSICAO 2",
+    "opcoes": [
+      "Feche a porta.",
+      "RESPOSTA CERTA",
+      "Por favor, sente-se.",
+      "Vamos sair?"
+    ],
+    "correta": 1,
+    "explicacao": "A frase 'Está chovendo.' é uma proposição pois pode ser verdadeira ou falsa.",
+    "nivel": "fácil",
+    "categoria": "proposicoes"
+  },
+  {
+    "id": "todos-14",
+    "titulo": "Proposições Simples",
+    "enunciado": "Qual das seguintes é uma proposição? PREPOSICAO 2",
+    "opcoes": [
+      "Feche a porta.",
+      "RESPOSTA CERTA",
+      "Por favor, sente-se.",
+      "Vamos sair?"
+    ],
+    "correta": 1,
+    "explicacao": "A frase 'Está chovendo.' é uma proposição pois pode ser verdadeira ou falsa.",
+    "nivel": "fácil",
+    "categoria": "proposicoes"
+  },
+  {
+    "id": "todos-15",
+    "titulo": "Proposições Simples",
+    "enunciado": "Qual das seguintes é uma proposição? PREPOSICAO 2",
+    "opcoes": [
+      "Feche a porta.",
+      "RESPOSTA CERTA",
+      "Por favor, sente-se.",
+      "Vamos sair?"
+    ],
+    "correta": 1,
+    "explicacao": "A frase 'Está chovendo.' é uma proposição pois pode ser verdadeira ou falsa.",
+    "nivel": "fácil",
+    "categoria": "proposicoes"
+  },
+  {
+    "id": "todos-16",
+    "titulo": "Proposições Simples",
+    "enunciado": "Qual das seguintes é uma proposição?",
+    "opcoes": [
+      "Feche a porta.",
+      "RESPOSTA CERTA",
+      "Por favor, sente-se.",
+      "Vamos sair?"
+    ],
+    "correta": 1,
+    "explicacao": "A frase 'Está chovendo.' é uma proposição pois pode ser verdadeira ou falsa.",
+    "nivel": "fácil",
+    "categoria": "proposicoes"
+  },
+  {
+    "id": "todos-17",
+    "titulo": "Proposições Simples",
+    "enunciado": "Qual das seguintes é uma proposição? PREPOSICAO 2",
+    "opcoes": [
+      "Feche a porta.",
+      "RESPOSTA CERTA",
+      "Por favor, sente-se.",
+      "Vamos sair?"
+    ],
+    "correta": 1,
+    "explicacao": "A frase 'Está chovendo.' é uma proposição pois pode ser verdadeira ou falsa.",
+    "nivel": "fácil",
+    "categoria": "proposicoes"
+  },
+  {
+    "id": "todos-18",
+    "titulo": "Proposições Simples",
+    "enunciado": "Qual das seguintes é uma proposição? PREPOSICAO 2",
+    "opcoes": [
+      "Feche a porta.",
+      "RESPOSTA CERTA",
+      "Por favor, sente-se.",
+      "Vamos sair?"
+    ],
+    "correta": 1,
+    "explicacao": "A frase 'Está chovendo.' é uma proposição pois pode ser verdadeira ou falsa.",
+    "nivel": "fácil",
+    "categoria": "proposicoes"
+  },
+  {
+    "id": "todos-19",
+    "titulo": "Proposições Simples",
+    "enunciado": "Qual das seguintes é uma proposição? PREPOSICAO 2",
+    "opcoes": [
+      "Feche a porta.",
+      "RESPOSTA CERTA",
+      "Por favor, sente-se.",
+      "Vamos sair?"
+    ],
+    "correta": 1,
+    "explicacao": "A frase 'Está chovendo.' é uma proposição pois pode ser verdadeira ou falsa.",
+    "nivel": "fácil",
+    "categoria": "proposicoes"
+  },
+  {
+    "id": "todos-20",
+    "titulo": "Proposições Simples",
+    "enunciado": "Qual das seguintes é uma proposição? PREPOSICAO 2",
+    "opcoes": [
+      "Feche a porta.",
+      "RESPOSTA CERTA",
+      "Por favor, sente-se.",
+      "Vamos sair?"
+    ],
+    "correta": 1,
+    "explicacao": "A frase 'Está chovendo.' é uma proposição pois pode ser verdadeira ou falsa.",
+    "nivel": "fácil",
+    "categoria": "proposicoes"
+  }
+]
+
