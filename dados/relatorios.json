@@ -1,80 +1,18 @@
 [
     {
-        "assunto": "proposicoes",
-        "acertos": 1,
-        "erros": 0,
-        "tempo": 7
-    },
-    {
-        "assunto": "tabelas",
-        "acertos": 1,
-        "erros": 0,
-        "tempo": 9
-    },
-    {
-        "assunto": "proposicoes",
-        "acertos": 2,
-        "erros": 0,
-        "tempo": 9
-    },
-    {
-        "assunto": "proposicoes",
-        "acertos": 1,
+        "usuario": "usuario@exemplo.com",
+        "assunto": "1",
+        "acertos": 8,
         "erros": 1,
-        "tempo": 16
+        "tempo": 41.0,
+        "data": "2025-05-29 11:49:02"
     },
     {
-        "assunto": "proposicoes",
-        "acertos": 3,
+        "usuario": "mcdiscreto@gmail.com",
+        "assunto": "1",
+        "acertos": 7,
         "erros": 2,
-        "tempo": 31
-    },
-    {
-        "assunto": "proposicoes",
-        "acertos": 4,
-        "erros": 1,
-        "tempo": 27
-    },
-    {
-        "assunto": "proposicoes",
-        "acertos": 3,
-        "erros": 2,
-        "tempo": 23
-    },
-    {
-        "assunto": "proposicoes",
-        "acertos": 3,
-        "erros": 2,
-        "tempo": 18
-    },
-    {
-        "assunto": "proposicoes",
-        "acertos": 5,
-        "erros": 0,
-        "tempo": 25
-    },
-    {
-        "assunto": "proposicoes",
-        "acertos": 2,
-        "erros": 4,
-        "tempo": 23
-    },
-    {
-        "assunto": "proposicoes",
-        "acertos": 2,
-        "erros": 4,
-        "tempo": 24
-    },
-    {
-        "assunto": "proposicoes",
-        "acertos": 5,
-        "erros": 0,
-        "tempo": 23
-    },
-    {
-        "assunto": "tabelas",
-        "acertos": 5,
-        "erros": 0,
-        "tempo": 18
+        "tempo": 40.0,
+        "data": "2025-05-29 11:50:56"
     }
 ]

@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "nome": "Lógica Proposicional",
+        "descricao": "Fundamentos da lógica proposicional"
+    },
+    {
+        "id": 2,
+        "nome": "Tabelas Verdade",
+        "descricao": "Construção e análise de tabelas verdade"
+    },
+    {
+        "id": 3,
+        "nome": "Argumentos Válidos",
+        "descricao": "Identificação de argumentos lógicos válidos"
+    },
+    {
+        "id": 4,
+        "nome": "Formas Normais",
+        "descricao": "Formas normais conjuntiva e disjuntiva"
+    }
+]

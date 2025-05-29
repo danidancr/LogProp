@@ -1,226 +1,416 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <title>Exercício - {{ assunto_id }}</title>
+    <meta charset="UTF-8" />
+    <title>Exercícios - Lógica Proposicional</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
+        /* Fonte e layout base */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(160deg, #3abd68, #3b82f6);
-            background-attachment: fixed;
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
             margin: 0;
-            padding: 40px 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
+            padding: 0;
         }
 
-
-        h1 {
-            margin-bottom: 20px;
-            color: #fff;
-        }
-
-        .card {
-            background: #fff;
-            padding: 30px;
+        .container {
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #ffffff;
             border-radius: 16px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-            max-width: 600px;
-            width: 100%;
-            text-align: center;
-            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
-        .progress-container {
-            width: 100%;
-            background: #e5e7eb;
-            border-radius: 8px;
-            overflow: hidden;
-            height: 16px;
-            margin-bottom: 20px;
-        }
-
+        /* Barra de progresso */
         .progress-bar {
-            height: 100%;
-            width: 0%;
+            width: 100%;
+            background-color: #ddd;
+            border-radius: 6px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .progress-fill {
+            height: 10px;
             background-color: #3b82f6;
             transition: width 0.3s ease-in-out;
         }
 
-        .options label {
+        /* Título e enunciado */
+        h2 {
+            color: #222;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        #question-text {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        /* Formulário de respostas */
+        form label {
             display: block;
-            margin: 10px 0;
-            padding: 12px 16px;
-            background: #e8e8e8;
-            border-radius: 10px;
+            background-color: #f7f7f7;
+            padding: 12px;
+            border-radius: 12px;
+            margin-bottom: 10px;
             cursor: pointer;
-            transition: background 0.3s;
+            border: 2px solid transparent;
+            transition: 0.2s;
         }
 
-        .options label:hover {
-            background: #d0d0d0;
+        form label:hover {
+            background-color: #e6f7d9;
         }
 
-        .feedback {
-            margin-top: 15px;
-            font-weight: bold;
-            font-size: 1.1em;
+        form input[type="radio"] {
+            margin-right: 10px;
         }
 
-        .button {
-            margin-top: 20px;
+        form button {
+            margin-top: 10px;
             padding: 12px 24px;
+            background-color: #3b82f6;
             border: none;
-            background: #3b82f6;
+            border-radius: 12px;
             color: white;
-            font-size: 1em;
-            font-weight: bold;
-            border-radius: 10px;
+            font-size: 16px;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: background 0.2s;
         }
 
-        .button:disabled {
-            background: #aaa;
+        form button:disabled {
+            background-color: #ccc;
             cursor: not-allowed;
         }
 
-        .hidden {
-            display: none;
+        form button:hover:not(:disabled) {
+            background-color: #25549f;
         }
 
-        .home-button {
-            display: inline-block;
+        /* Feedback */
+        #feedback {
             margin-top: 20px;
-            padding: 12px 24px;
-            text-decoration: none;
-            background-color: #007BFF;
-            color: white;
-            font-weight: bold;
-            border-radius: 10px;
-            transition: background 0.3s;
+            font-size: 16px;
         }
 
-        .home-button:hover {
-            background-color: #0056b3;
+        /* Botão continuar */
+        #continuar-btn {
+            padding: 12px 24px;
+            background-color: #3b82f6;
+            border: none;
+            border-radius: 12px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        #continuar-btn:hover {
+            background-color: #2b60b7;
+        }
+
+        /* Comentários */
+        #comentarios-section {
+            margin-top: 30px;
+            padding-top: 10px;
+            border-top: 1px solid #ddd;
+        }
+
+        #comentario {
+            width: 100%;
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            resize: none;
+            margin-bottom: 10px;
+            font-family: inherit;
+        }
+
+        #comentarios-section button {
+            background-color: #ff9800;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        #comentarios-section button:hover {
+            background-color: #e68900;
+        }
+
+        .comentario {
+            background-color: #f9f9f9;
+            border-left: 4px solid #3b82f6;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 8px;
+        }
+
+        /* Resumo final */
+        #resumo-final {
+            text-align: center;
+        }
+
+        #resumo-final button {
+            background-color: #3b82f6;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        #resumo-final button:hover {
+            background-color: #3b82f6;
         }
     </style>
 </head>
 <body>
-    <h1>Exercícios</h1>
-
-    <!-- Área do quiz -->
-    <div class="card" id="quiz">
-        <div class="progress-container">
-            <div class="progress-bar" id="progressBar"></div>
+    <div class="container">
+        <!-- Barra de Progresso -->
+        <div class="progress-bar">
+            <div id="progress-fill" class="progress-fill" style="width: 0%; height: 10px; background-color: #3b82f6;"></div>
         </div>
-        <div id="perguntaTexto"></div>
-        <div class="options" id="opcoes"></div>
-        <button class="button" onclick="confirmarResposta()">Confirmar</button>
-        <div class="feedback" id="feedback"></div>
-    </div>
 
-    <!-- Resultado final -->
-    <div class="card hidden" id="resultadoFinal">
-        <h2>Resultado Final</h2>
-        <p>✅ Acertos: <span id="acertos"></span></p>
-        <p>❌ Erros: <span id="erros"></span></p>
-        <p>⏱️ Tempo total: <span id="tempoTotal"></span> segundos</p>
-        <a href="/home" id="homeButton" class="home-button hidden">🏠 Voltar para Home</a>
+        <!-- Questões -->
+        <div id="question-container">
+            <h2 id="question-title"></h2>
+            <div id="question-text"></div>
+            <form id="question-form"></form>
+            <div id="feedback"></div>
+            <button id="continuar-btn" style="display:none; margin-top: 20px;" onclick="proximaQuestao()">Continuar</button>
+
+            <!-- Comentários -->
+            <div id="comentarios-section" style="display: none;">
+                <textarea id="comentario" placeholder="Comente sobre esta questão..."></textarea>
+                <button type="button" onclick="enviarComentario()">Enviar Comentário</button>
+                <div id="comentarios-lista"></div>
+            </div>
+        </div>
+
+        <!-- Resultado Final -->
+        <div id="resumo-final" style="display: none;">
+            <h2>Resultado</h2>
+            <p>Acertos: <span id="acertos"></span></p>
+            <p>Erros: <span id="erros"></span></p>
+            <p>Tempo total: <span id="tempo-total"></span></p>
+            <button onclick="window.location.href='{{ url_for('home') }}'">Voltar ao Início</button>
+        </div>
     </div>
 
     <script>
-        const perguntas = {{ perguntas | tojson }};
+        const questoes = {{ perguntas|tojson }};
         let indice = 0;
         let acertos = 0;
         let erros = 0;
-        let inicioTempo = Date.now();
+        const startTime = Date.now();
 
-        function exibirPergunta() {
-            const pergunta = perguntas[indice];
-            document.getElementById('feedback').textContent = '';
-            document.getElementById('perguntaTexto').innerHTML = pergunta.enunciado;
-            document.getElementById('opcoes').innerHTML = '';
+        const questionContainer = document.getElementById('question-container');
+        const feedbackDiv = document.getElementById('feedback');
+        const comentariosSection = document.getElementById('comentarios-section');
+        const comentariosLista = document.getElementById('comentarios-lista');
+        const resumoFinal = document.getElementById('resumo-final');
+        const acertosSpan = document.getElementById('acertos');
+        const errosSpan = document.getElementById('erros');
+        const tempoTotalSpan = document.getElementById('tempo-total');
+        const continuarBtn = document.getElementById('continuar-btn');
 
-            pergunta.opcoes.forEach((opcao, i) => {
-                document.getElementById('opcoes').innerHTML += `
-                    <label>
-                        <input type="radio" name="resposta" value="${i}"> ${opcao}
-                    </label>`;
-            });
-
-            // Atualiza barra de progresso
-            document.getElementById("progressBar").style.width = `${((indice) / perguntas.length) * 100}%`;
+        if (questoes && questoes.length > 0) {
+            montarQuestao();
+        } else {
+            questionContainer.innerHTML = '<p>Nenhuma pergunta encontrada.</p>';
         }
 
-        function confirmarResposta() {
-            const selecionada = document.querySelector('input[name="resposta"]:checked');
-            if (!selecionada) {
-                alert("Selecione uma opção!");
+        function montarQuestao() {
+            const questao = questoes[indice];
+            document.getElementById("question-title").textContent = questao.titulo;
+            document.getElementById("question-text").innerHTML = questao.enunciado;
+
+            const form = document.getElementById('question-form');
+            form.innerHTML = '';
+
+            questao.opcoes.forEach((opcao, i) => {
+                const label = document.createElement('label');
+                const input = document.createElement('input');
+                input.type = 'radio';
+                input.name = 'resposta';
+                input.value = i;
+                label.appendChild(input);
+                label.append(' ' + opcao);
+                form.appendChild(label);
+                form.appendChild(document.createElement('br'));
+            });
+
+            const btnConfirmar = document.createElement('button');
+            btnConfirmar.type = 'submit';
+            btnConfirmar.id = 'confirm-btn';
+            btnConfirmar.disabled = true;
+            btnConfirmar.textContent = 'Confirmar';
+            form.appendChild(btnConfirmar);
+
+            feedbackDiv.innerHTML = '';
+            comentariosSection.style.display = 'none';
+            comentariosLista.innerHTML = '';
+            continuarBtn.style.display = 'none';
+
+            form.addEventListener('change', () => {
+                const selecionado = form.querySelector('input[name="resposta"]:checked');
+                btnConfirmar.disabled = !selecionado;
+            });
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                const respostaSelecionada = form.querySelector('input[name="resposta"]:checked');
+                if (!respostaSelecionada) return;
+
+                const resposta = parseInt(respostaSelecionada.value);
+                const correta = questao.correta; // <-- CORRIGIDO AQUI
+
+                btnConfirmar.disabled = true;
+
+                if (resposta === correta) {
+                    acertos++;
+                    feedbackDiv.innerHTML = "<p style='color:green;'>Resposta correta!</p>";
+                } else {
+                    erros++;
+                    feedbackDiv.innerHTML = `<p style='color:red;'>Incorreto. Explicação: ${questao.explicacao}</p>`;
+                }
+
+                comentariosSection.style.display = 'block';
+                carregarComentarios();
+
+                document.getElementById('progress-fill').style.width = `${((indice + 1) / questoes.length) * 100}%`;
+                continuarBtn.style.display = 'inline-block';
+            }, { once: true });
+        }
+
+        function proximaQuestao() {
+            indice++;
+            if (indice >= questoes.length) {
+                mostrarResumoFinal();
+            } else {
+                montarQuestao();
+            }
+        }
+
+        function mostrarResumoFinal() {
+            questionContainer.style.display = 'none';
+            resumoFinal.style.display = 'block';
+
+            acertosSpan.textContent = acertos;
+            errosSpan.textContent = erros;
+
+            const tempoSegundos = Math.round((Date.now() - startTime) / 1000);
+            tempoTotalSpan.textContent = `${tempoSegundos} segundos`;
+
+            // Agora envia os dados para salvar o relatório
+            salvarRelatorio(acertos, erros, tempoSegundos);
+        }
+
+        async function salvarRelatorio(acertos, erros, tempoSegundos) {
+            const data = {
+                assunto: '{{ assunto_id }}',  // certifique-se que assunto_id está definido no contexto
+                acertos: acertos,
+                erros: erros,
+                tempo: tempoSegundos
+            };
+
+            try {
+                const response = await fetch('/api/salvar_relatorio', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                if (!response.ok) {
+                    console.error('Erro ao salvar relatório:', response.statusText);
+                } else {
+                    console.log('Relatório salvo com sucesso');
+                }
+            } catch (error) {
+                console.error('Erro ao salvar relatório:', error);
+            }
+        }
+
+        function enviarRelatorio(acertos, erros, tempoDecorrido) {
+            const nomeDoAssunto = document.getElementById('titulo-assunto').textContent; // Ex: "Tabelas Verdade"
+
+            fetch('/api/salvar_relatorio', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    acertos: acertos,
+                    erros: erros,
+                    tempo: tempoDecorrido,
+                    assunto: nomeDoAssunto  // ✅ Campo "assunto" enviado
+                })
+            })
+            .then(response => response.json())
+            .then(data => console.log("Relatório salvo:", data))
+            .catch(err => console.error("Erro ao salvar relatório:", err));
+        }
+
+        async function carregarComentarios() {
+            comentariosLista.innerHTML = 'Carregando comentários...';
+            try {
+                const response = await fetch(`/api/comentarios?assunto={{ assunto_id }}&questao_id=${questoes[indice].id}`);
+                if (!response.ok) throw new Error('Erro ao buscar comentários');
+                const dados = await response.json();
+
+                if (dados.length === 0) {
+                    comentariosLista.innerHTML = '<p>Faça um comentário.</p>';
+                    return;
+                }
+
+                comentariosLista.innerHTML = '';
+                dados.forEach(c => {
+                    const div = document.createElement('div');
+                    div.classList.add('comentario');
+                    div.innerHTML = `<strong>${c.usuario}</strong> (${new Date(c.timestamp).toLocaleString()}):<br>${c.texto}`;
+                    comentariosLista.appendChild(div);
+                });
+            } catch (error) {
+                comentariosLista.innerHTML = '<p>Não foi possível carregar os comentários.</p>';
+            }
+        }
+
+        async function enviarComentario() {
+            const texto = document.getElementById('comentario').value.trim();
+            if (!texto) {
+                alert('Digite um comentário antes de enviar.');
                 return;
             }
 
-            const resposta = parseInt(selecionada.value);
-            const correta = perguntas[indice].correta;
-            const feedback = document.getElementById('feedback');
-
-            if (resposta === correta) {
-                feedback.textContent = "✅ Correto!";
-                feedback.style.color = "green";
-                acertos++;
-            } else {
-                feedback.textContent = "❌ Errado. " + perguntas[indice].explicacao;
-                feedback.style.color = "red";
-                erros++;
-            }
-
-            setTimeout(() => {
-                indice++;
-                if (indice < perguntas.length) {
-                    exibirPergunta();
-                } else {
-                    finalizar();
-                }
-            }, 1500);
-        }
-
-        function finalizar() {
-            document.getElementById("quiz").classList.add("hidden");
-            document.getElementById("resultadoFinal").classList.remove("hidden");
-
-            const tempoFinal = Math.round((Date.now() - inicioTempo) / 1000);
-            document.getElementById("acertos").textContent = acertos;
-            document.getElementById("erros").textContent = erros;
-            document.getElementById("tempoTotal").textContent = tempoFinal;
-
-            // Finaliza barra
-            document.getElementById("progressBar").style.width = `100%`;
-
-            const dados = {
-                acertos,
-                erros,
-                tempo: tempoFinal,
-                assunto: "{{ assunto_id }}"
+            const data = {
+                texto: texto,
+                assunto: '{{ assunto_id }}',
+                questao_id: questoes[indice].id
             };
 
-            fetch("/salvar_relatorio", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(dados)
-            })
-            .then(res => {
-                if (res.ok) {
-                    document.getElementById("homeButton").classList.remove("hidden");
-                } else {
-                    alert("Erro ao salvar relatório.");
-                }
-            });
-        }
+            try {
+                const response = await fetch('/api/comentarios', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
 
-        // Inicia o quiz
-        exibirPergunta();
+                if (!response.ok) throw new Error('Erro ao enviar comentário');
+
+                document.getElementById('comentario').value = '';
+                carregarComentarios();
+            } catch (error) {
+                alert('Erro ao enviar comentário.');
+            }
+        }
     </script>
+
 </body>
 </html>

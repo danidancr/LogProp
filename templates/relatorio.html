@@ -3,115 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <title>Relatório de Desempenho</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilo.css') }}">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background: #f0f4f8;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 0;
         }
-        .card {
-            background: #fff;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            width: 100%;
-            max-width: 700px;
-            margin-bottom: 20px;
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
-        h1, h2 {
-            margin-top: 0;
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 28px;
+            color: #333;
         }
-        table {
+
+        .tabela-relatorio {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 15px;
+            margin-bottom: 20px;
         }
-        th, td {
-            padding: 12px;
-            text-align: left;
+
+        .tabela-relatorio thead {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .tabela-relatorio th,
+        .tabela-relatorio td {
+            padding: 12px 15px;
+            text-align: center;
             border-bottom: 1px solid #ddd;
         }
-        .button {
-            padding: 10px 20px;
-            background: #58cc02;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: 10px;
+
+        .tabela-relatorio tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
         }
-        .button:hover {
-            background: #45a800;
+
+        .tabela-relatorio tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        button {
+            background-color: #28a745;
+            border: none;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px;
+            margin-right: 12px;
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        a {
+            text-decoration: none;
+            font-size: 15px;
+            color: #007bff;
+            padding: 10px 18px;
+            border-radius: 8px;
+            transition: background-color 0.2s;
+        }
+
+        a:hover {
+            background-color: #e9ecef;
+        }
+
+        @media (max-width: 600px) {
+            .tabela-relatorio th, .tabela-relatorio td {
+                font-size: 14px;
+                padding: 10px;
+            }
+
+            button, a {
+                display: block;
+                width: 100%;
+                margin-bottom: 10px;
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
+    <div class="container">
+        <h1>📊 Relatório de Desempenho</h1>
 
-    <h1>Seu Relatório</h1>
-
-    <div class="card">
-        <h2>Resumo Geral</h2>
-        <p><strong>Total de questões respondidas:</strong> {{ total_questoes }}</p>
-        <p><strong>Acertos:</strong> {{ acertos }}</p>
-        <p><strong>Erros:</strong> {{ erros }}</p>
-        <p><strong>Tempo médio por questão:</strong> {{ tempo_medio }}</p>
-        <p><strong>Desempenho Geral:</strong> {{ progresso_geral }}%</p>
-        <p><strong>Feedback:</strong> {{ feedback }}</p>
-        <button class="button" onclick="baixarRelatorio()">📥 Baixar Relatório</button>
-    </div>
-
-    <div class="card">
-        <h2>Desempenho por Assunto</h2>
-        <table>
+        <table class="tabela-relatorio">
             <thead>
                 <tr>
-                    <th>Assunto</th>
-                    <th>Acertos</th>
-                    <th>Erros</th>
-                    <th>% de Acertos</th>
-                    <th>Tempo (s)</th>
+                    <th>📅 Data</th>
+                    <th>📘 Assunto</th>
+                    <th>✅ Acertos</th>
+                    <th>❌ Erros</th>
+                    <th>⏱️ Tempo (s)</th>
                 </tr>
             </thead>
             <tbody>
-                {% for item in por_assunto %}
+                {% for rel in relatorios %}
                 <tr>
-                    <td>{{ item.assunto }}</td>
-                    <td>{{ item.acertos }}</td>
-                    <td>{{ item.erros }}</td>
-                    <td>{{ item.percentual_acertos }}%</td>
-                    <td>{{ item.tempo }}</td>
+                    <td>{{ rel.data }}</td>
+                    <td>{{ rel.assunto }}</td>
+                    <td>{{ rel.acertos }}</td>
+                    <td>{{ rel.erros }}</td>
+                    <td>{{ rel.tempo }}</td>
                 </tr>
+                {% else %}
+                <tr><td colspan="5">Nenhum relatório disponível.</td></tr>
                 {% endfor %}
             </tbody>
         </table>
+
+        <div style="text-align: center;">
+            <button onclick="baixarJSON()">📥 Baixar Relatório (JSON)</button>
+            <a href="{{ url_for('home') }}">⬅️ Voltar</a>
+        </div>
     </div>
 
     <script>
-        function baixarRelatorio() {
-            const dados = {
-                total_questoes: {{ total_questoes }},
-                acertos: {{ acertos }},
-                erros: {{ erros }},
-                tempo_medio: "{{ tempo_medio }}",
-                progresso_geral: {{ progresso_geral }},
-                feedback: "{{ feedback }}",
-                por_assunto: {{ por_assunto | tojson }}
-            };
-
-            const blob = new Blob([JSON.stringify(dados, null, 2)], { type: 'application/json' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = "relatorio.json";
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
+        const relatorios = {{ relatorios|tojson }};
+        
+        function baixarJSON() {
+            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(relatorios, null, 2));
+            const link = document.createElement('a');
+            link.setAttribute("href", dataStr);
+            link.setAttribute("download", "relatorio.json");
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
         }
     </script>
-
 </body>
 </html>

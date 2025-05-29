@@ -22,7 +22,6 @@
                     </div>
                     <nav class="dropdown-menu">
                         <ul>
-                            <li><a href="{{ url_for('minha_conta') }}">Minha Conta</a></li>
                             <li><a href="{{ url_for('relatorio') }}">Relatório</a></li>
                             <li><a href="{{ url_for('sair') }}">Sair da Conta</a></li>
                         </ul>
@@ -38,10 +37,10 @@
             <div class="interface">
                 <div class="flex">
                     <div class="titulo">
-                        <h1>{{ assunto[0] }}</h1>
-                        <p>{{ assunto[1] }}</p>
+                        <h1>{{ assunto.nome }}</h1>
+                        <p>{{ assunto.descricao }}</p>
                         <div class="btn-questoes">
-                            <a href="{{ url_for('assunto', assunto_id=assunto[2]) }}" class="botao">Comece já</a>
+                            <a href="{{ url_for('assunto', assunto_id=assunto.id) }}" class="botao">Comece já</a>
                         </div>
                     </div>
                 </div>
