@@ -1,18 +1,1 @@
-[
-    {
-        "usuario": "usuario@exemplo.com",
-        "assunto": "1",
-        "acertos": 8,
-        "erros": 1,
-        "tempo": 41.0,
-        "data": "2025-05-29 11:49:02"
-    },
-    {
-        "usuario": "mcdiscreto@gmail.com",
-        "assunto": "1",
-        "acertos": 7,
-        "erros": 2,
-        "tempo": 40.0,
-        "data": "2025-05-29 11:50:56"
-    }
-]
+
