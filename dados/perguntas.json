@@ -85,121 +85,259 @@
     "categoria": "condicional"
   },
   {
-    "id": "proposicoes-06",
-    "assunto_id": 1,
-    "titulo": "Negação de Proposição Composta",
-    "enunciado": "(Poscomp 2022) – Dada a afirmação:\n\"Exatamente uma pessoa entre Marcos e Heide viajou\".\nA negação da afirmação acima é logicamente equivalente à:",
+    "id": "tabela-01",
+    "assunto_id": 2,
+    "titulo": "Tabela-Verdade - Determinação de Valores",
+    "enunciado": "A tabela-verdade a seguir apresenta algumas proposições com valores lógicos ocultos, representados pelas letras a, b e c. Com base nas regras lógicas e na análise da tabela, determine o valor lógico correspondente a a, b e c, respectivamente.",
     "opcoes": [
-      "A) Ambos viajaram.",
-      "B) Ambos não viajaram.",
-      "C) Marcos ou Heide não viajou.",
-      "D) Ambos viajaram ou ambos não viajaram.",
-      "E) Pelo menos um entre Marcos e Heide viajou."
+      "A) V V V",
+      "B) V F V",
+      "C) V F F",
+      "D) F V F",
+      "E) F F C"
     ],
-    "correta": 3,
-    "explicacao": "Resposta correta letra C",
-    "categoria": "negacao-logica"
+    "correta": 1,
+    "explicacao": "Resposta correta letra B.",
+    "nivel": "médio",
+    "categoria": "tabela-verdade"
   },
   {
-    "id": "proposicoes-07",
-    "assunto_id": 1,
-    "titulo": "Negação de Quantificadores",
-    "enunciado": "(Poscomp 2022) – Analise a proposição abaixo:\n\"Existe pelo menos uma cidade em que todos os hospitais possuem, pelo menos, 30 leitos\".\nA negação da proposição acima é logicamente equivalente à proposição:",
+    "id": "tabela-02",
+    "assunto_id": 2,
+    "titulo": "Tabela-Verdade - Análise de Proposição Composta",
+    "enunciado": "Uma determinada proposição composta, R(p,q), formada a partir de duas proposições simples, p e q, e alguns conectivos, a saber: negação, disjunção e conjunção, pode ser descrita pela seguinte expressão lógica: R(p,q) = (¬(p ∨ q)) ∧ (¬p). Após analisar R(p,q), assinale a alternativa que completa CORRETAMENTE a última coluna da tabela-verdade na sequência crescente de suas linhas.",
     "opcoes": [
-      "A) Há uma cidade em que existe pelo menos um hospital com, no máximo, 29 leitos.",
-      "B) Em no máximo uma cidade, existe um hospital que possui, no máximo, 100 leitos.",
-      "C) Em cada cidade, existe pelo menos uma escola que possui, pelo menos, 30 leitos.",
-      "D) Existe nenhuma cidade em que todos os hospitais possuam, no máximo, 30 leitos.",
-      "E) Em todas as cidades, existe pelo menos um hospital que possui, no máximo, 29 leitos."
+      "A) V V F F",
+      "B) V F F V",
+      "C) F F F V",
+      "D) F F V V",
+      "E) F V F V"
+    ],
+    "correta": 2,
+    "explicacao": "Resposta correta letra C.",
+    "nivel": "médio",
+    "categoria": "tabela-verdade"
+  },
+  {
+    "id": "tabela-03",
+    "assunto_id": 3,
+    "titulo": "Tabela-Verdade - Análise de Afirmações",
+    "enunciado": "Observe a tabela-verdade a seguir e analise as afirmações: I. A proposição (p ∧ q) → (p ∨ q) é uma tautologia, pois é sempre verdadeira, independentemente dos valores lógicos de p e de q. II. Se a última coluna da tabela-verdade só apresentar verdadeiro (e nenhum falso), então estaremos diante de uma contradição. III. Uma proposição composta será dita uma contingência sempre que não for uma tautologia ou uma contradição. Está CORRETO o que se afirma em:",
+    "opcoes": [
+      "A) Apenas a afirmação I está correta",
+      "B) Afirmações I e II estão corretas",
+      "C) Afirmações I e III estão corretas",
+      "D) Afirmações II e III estão corretas",
+      "E) Afirmações I, II e III estão corretas"
+    ],
+    "correta": 2,
+    "explicacao": "Resposta correta letra C.",
+    "nivel": "médio",
+    "categoria": "tabela-verdade"
+  },
+  {
+    "id": "tabela-04",
+    "assunto_id": 2,
+    "titulo": "Tabela-Verdade - Determinação de Valores",
+    "enunciado": "Qual dos itens abaixo corresponde aos valores lógicos (de cima para baixo) da última coluna da tabela-verdade abaixo?",
+    "opcoes": [
+      "A) F F F F",
+      "B) V F F F",
+      "C) F V F F",
+      "D) F F V F",
+      "E) F F F V"
+    ],
+    "correta": 3,
+    "explicacao": "Resposta correta letra D.",
+    "nivel": "fácil",
+    "categoria": "tabela-verdade"
+  },
+  {
+    "id": "tabela-05",
+    "assunto_id": 2,
+    "titulo": "Tabela-Verdade - Determinação de Valores Omissos",
+    "enunciado": "Qual das alternativas abaixo corresponde aos valores lógicos omissos (de cima para baixo) da última coluna da tabela-verdade abaixo, onde V representa a verdade e F a falsidade?",
+    "opcoes": [
+      "A) V V F V V",
+      "B) F V V V V",
+      "C) F V V F V",
+      "D) F V V V F",
+      "E) F F V V V"
+    ],
+    "correta": 1,
+    "explicacao": "Resposta correta letra B.",
+    "nivel": "médio",
+    "categoria": "tabela-verdade"
+  },
+    {
+    "id": "assunto3-01",
+    "assunto_id": 3,
+    "titulo": "Negação de Proposição Existencial",
+    "enunciado": "(Ibest - 2025) Assinale a alternativa que apresenta a negação da proposição lógica “Algum alienígena não tem antenas”.",
+    "opcoes": [
+      "A) Ou é alienígena, ou tem antenas.",
+      "B) Nenhum alienígena tem antenas.",
+      "C) Algum alienígena tem antenas.",
+      "D) Todos os alienígenas não têm antenas.",
+      "E) Todos os alienígenas têm antenas."
     ],
     "correta": 4,
     "explicacao": "Resposta correta letra E",
-    "nivel": "difícil",
+    "nivel": "médio",
+    "categoria": "negacao-logica"
+  },
+  {
+    "id": "assunto3-02",
+    "assunto_id": 3,
+    "titulo": "Equivalência de Condicional",
+    "enunciado": "(Ibest - 2025) Assinale a alternativa que apresenta uma proposição logicamente equivalente a “Se Pierre comprou um croissant, então Émile comprou uma baguete”.",
+    "opcoes": [
+      "A) Se Émile comprou uma baguete, então Pierre comprou um croissant.",
+      "B) Pierre comprou um croissant e Émile comprou uma baguete.",
+      "C) Se Émile não comprou uma baguete, então Pierre não comprou um croissant.",
+      "D) Pierre comprou um croissant ou Émile comprou uma baguete.",
+      "E) Pierre não comprou um croissant ou Émile não comprou uma baguete."
+    ],
+    "correta": 2,
+    "explicacao": "Resposta correta letra C",
+    "nivel": "médio",
+    "categoria": "equivalencia-logica"
+  },
+  {
+    "id": "assunto3-03",
+    "assunto_id": 3,
+    "titulo": "Negação de Proposição Universal",
+    "enunciado": "(CRMV-TO - 2025) Assinale a opção que apresenta a negação lógica da proposição “Nenhum príncipe é encantado”.",
+    "opcoes": [
+      "A) Algum príncipe não é encantado.",
+      "B) Pelo menos um príncipe é encantado.",
+      "C) Todos os príncipes são encantados.",
+      "D) Todos os encantados são príncipes.",
+      "E) Todos os príncipes não são encantados."
+    ],
+    "correta": 1,
+    "explicacao": "Resposta correta letra B",
+    "nivel": "médio",
     "categoria": "negacao-quantificadores"
   },
   {
-    "id": "proposicoes-08",
-    "assunto_id": 1,
-    "titulo": "Dedução Lógica",
-    "enunciado": "(Poscomp 2017) – Sejam M, N, P, Q e R proposições lógicas tais que p é falsa e a proposição composta ((M → N) ∧ (N → P) ∧ (P → Q) ∧ (Q → R)) é verdadeira, qual proposição abaixo é necessariamente verdadeira?",
+    "id": "assunto3-04",
+    "assunto_id": 3,
+    "titulo": "Negação de Proposição Composta",
+    "enunciado": "(IBADE - 2025) A negativa da proposição “Arthur é alto e gentil” é:",
     "opcoes": [
-      "A) N → R",
-      "B) Q → N",
-      "C) R → Q",
-      "D) M ∨ R",
-      "E) M ∧ R"
+      "A) Arthur não é alto e não é gentil.",
+      "B) Arthur é alto ou não é gentil.",
+      "C) Arthur não é alto ou não é gentil.",
+      "D) Arthur não é gentil e alto.",
+      "E) Arthur não é alto ou é gentil."
     ],
-    "correta": 0,
-    "explicacao": "Resposta correta letra A",
-    "nivel": "médio",
+    "correta": 2,
+    "explicacao": "Resposta correta letra C",
+    "nivel": "fácil",
+    "categoria": "negacao-logica"
+  },
+  {
+    "id": "assunto3-05",
+    "assunto_id": 3,
+    "titulo": "Dedução Lógica",
+    "enunciado": "(IBADE - 2025) Se Lucas não é esforçado e Rodrigo é valente, então Ana é vaidosa. Se Marta é vaidosa, então Júlio não é forte. Sabe-se que Júlio é forte. Logo, podemos afirmar, corretamente, que:",
+    "opcoes": [
+      "A) Lucas não é esforçado.",
+      "B) Lucas é esforçado e Rodrigo não é valente.",
+      "C) Lucas é esforçado ou Rodrigo não é valente.",
+      "D) Lucas não é esforçado e Rodrigo é valente.",
+      "E) Marta é vaidosa."
+    ],
+    "correta": 2,
+    "explicacao": "Resposta correta letra C",
+    "nivel": "difícil",
     "categoria": "deducao-logica"
   },
   {
-    "id": "proposicoes-09",
-    "assunto_id": 1,
-    "titulo": "Negação de Condicional",
-    "enunciado": "(Poscomp 2016) – Considere a seguinte proposição z: P → (Q → R)\nA negação da proposição z é logicamente equivalente à proposição:",
-    "opcoes": [
-      "A) (P ∧ Q) ∧ (¬R)",
-      "B) (P ∨ Q) ∧ (¬R)",
-      "C) (¬P) ∧ (¬Q) ∧ R",
-      "D) (¬P) ∧ ((¬Q) ∨ R)",
-      "E) (¬P) ∨ ((¬Q) ∨ R)"
-    ],
-    "correta": 0,
-    "explicacao": "Resposta correta letra A",
-    "nivel": "difícil",
-    "categoria": "negacao-condicional"
-  },
-  {
-    "id": "assunto2-01",
-    "assunto_id": 2,
-    "titulo": "Exemplo Assunto 2 - Questão Fácil",
-    "enunciado": "Qual a saída do programa abaixo?\n\nprint(2 + 2 * 2)",
-    "opcoes": [
-      "A) 6",
-      "B) 8",
-      "C) 4",
-      "D) 10",
-      "E) 2"
-    ],
-    "correta": 0,
-    "explicacao": "A multiplicação tem precedência, então 2*2=4, somando 2 fica 6.",
-    "nivel": "fácil",
-    "categoria": "assunto2-exemplo"
-  },
-  {
-    "id": "assunto3-01",
-    "assunto_id": 3,
-    "titulo": "Exemplo Assunto 3 - Questão Média",
-    "enunciado": "Qual a complexidade temporal do algoritmo de busca binária?",
-    "opcoes": [
-      "A) O(n)",
-      "B) O(log n)",
-      "C) O(n^2)",
-      "D) O(1)",
-      "E) O(n log n)"
-    ],
-    "correta": 1,
-    "explicacao": "Busca binária divide o problema pela metade a cada passo, portanto O(log n).",
-    "nivel": "médio",
-    "categoria": "assunto3-exemplo"
-  },
-  {
-    "id": "assunto4-01",
+    "id": "tautologia-1",
     "assunto_id": 4,
-    "titulo": "Exemplo Assunto 4 - Questão Difícil",
-    "enunciado": "Em um grafo direcionado, qual algoritmo é utilizado para encontrar o caminho mínimo entre dois vértices?",
+    "titulo": "Tautologia com Proposição Composta",
+    "enunciado": "(VUNESP - 2025) Em Lógica, o conectivo ∨ representa a disjunção exclusiva, de maneira que a operação lógica p ∨ q é verdadeira quando apenas uma das proposições p ou q for verdadeira.\nDadas as proposições simples p e q, é tautológica a proposição composta",
     "opcoes": [
-      "A) Algoritmo de Prim",
-      "B) Algoritmo de Dijkstra",
-      "C) Algoritmo de Kruskal",
-      "D) Algoritmo de Floyd-Warshall",
-      "E) Algoritmo de Bellman-Ford"
+      "A) ∼p ∨ ((p ∧ q) ∨ (p → q))",
+      "B) p ∨ (q ↔ (∼p → q))",
+      "C) ∼((p ∨ q) ∧ ∼q)",
+      "D) ∼(p ∧   q) → ((q   ∨ p) ↔ (p ∨ q))",
+      "E) ((p ∨ q) ∨ (p ∨ q)) ↔ ∼p"
     ],
-    "correta": 1,
-    "explicacao": "Dijkstra é utilizado para caminho mínimo em grafos com arestas não negativas.",
+    "correta": 3,
+    "explicacao": "Resposta correta letra D",
     "nivel": "difícil",
-    "categoria": "assunto4-exemplo"
+    "categoria": "tautologia"
+  },
+  {
+    "id": "tautologia-2",
+    "assunto_id": 4,
+    "titulo": "Identificação de Tautologia",
+    "enunciado": "(CEFET-MG - 2025) Representa uma Tautologia a sentença:",
+    "opcoes": [
+      "A) Ou eu caso ou eu compro uma bicicleta.",
+      "B) Se hoje é sábado, então eu vou ao clube nadar.",
+      "C) O produto de dois números primos não é primo.",
+      "D) Eu estou com fome ou preciso viajar quando é feriado.",
+      "E) Um número inteiro diferente de 113 é maior ou menor do que 113."
+    ],
+    "correta": 4,
+    "explicacao": "Resposta correta letra E",
+    "nivel": "médio",
+    "categoria": "tautologia"
+  },
+  {
+    "id": "tautologia-3",
+    "assunto_id": 4,
+    "titulo": "Tautologia em Proposições Simples",
+    "enunciado": "(MS Consultoria - 2024) Tautologias são fundamentais na lógica proposicional por representarem verdades lógicas incondicionais. Considere as proposições abaixo e assinale qual delas representa uma tautologia.",
+    "opcoes": [
+      "A) p ∧ (p → q)",
+      "B) p → (p ∧ q)",
+      "C) (p → q) ∧ (q → p)",
+      "D) (p ∨ ~p)",
+      "E) (p ∨ q) → (q → p)"
+    ],
+    "correta": 3,
+    "explicacao": "Resposta correta letra D",
+    "nivel": "fácil",
+    "categoria": "tautologia"
+  },
+  {
+    "id": "tautologia-4",
+    "assunto_id": 4,
+    "titulo": "Classificação de Proposição Composta",
+    "enunciado": "(Instituto Access - 2024) A proposição completa (P^R) → (~QVR) é considerada uma:",
+    "opcoes": [
+      "A) Contingência.",
+      "B) Disjunção inclusiva.",
+      "C) Contradição.",
+      "D) Tautologia.",
+      "E) Nenhuma das Alternativas."
+    ],
+    "correta": 3,
+    "explicacao": "Resposta correta letra D",
+    "nivel": "médio",
+    "categoria": "tautologia"
+  },
+  {
+    "id": "tautologia-5",
+    "assunto_id": 4,
+    "titulo": "Classificação Lógica de Proposição",
+    "enunciado": "(CAESA-ES - 2024) A proposição composta A ∨ ~A pode ser classificada como:",
+    "opcoes": [
+      "A) Contradição.",
+      "B) Contingência.",
+      "C) Indeterminada.",
+      "D) Tautologia.",
+      "E) Nenhuma das alternativas."
+    ],
+    "correta": 3,
+    "explicacao": "Resposta correta letra D",
+    "nivel": "fácil",
+    "categoria": "tautologia"
   }
+
 ]
