@@ -1,12 +1,1 @@
-{
-    "usuario@exemplo.com": {
-        "nome": "teste usuario",
-        "senha": "scrypt:32768:8:1$ZCsCsFuSkMuHgcZz$28409d3e88ed5289184f9cc80066ff6d62c5952ff24c1dc6d358a0970d5b861d917591682fa6f029febd469c8f55b70356e749ce688eb4c1040ba387c27984d6",
-        "data_cadastro": "2025-05-29 11:47:57"
-    },
-    "mcdiscreto@gmail.com": {
-        "nome": "McDiscreto",
-        "senha": "scrypt:32768:8:1$cbLelXENRv00aFxv$37841ed07441fd8a3550849b2921f3f4ad7ba43da078af9c2dfa4629934e3d12c94e2a255e3e02eab86f3108b469b48d5d4b5e2b802833b5ae04bf70023da630",
-        "data_cadastro": "2025-05-29 11:50:01"
-    }
-}
+
