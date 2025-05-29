@@ -185,7 +185,7 @@
             <h3 style="text-align:center;">📌 Exemplos de Tabelas Verdade</h3>
             <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
                 {% set imagens = ['q1.jpg', 'q2.jpg', 'q3.jpg', 'q4.jpg', 'q5.jpg'] %}
-                {% for img in imagens %}
+                {% for imgagem in imagens %}
                 <div style="max-width: 300px;">
                     <img src="{{ url_for('static', filename='img/assunto2/' ~ img) }}"
                          alt="Imagem {{ loop.index }}"
