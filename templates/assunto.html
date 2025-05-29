@@ -179,28 +179,14 @@
             <div id="progress-fill" class="progress-fill" style="width: 0%; height: 10px; background-color: #3b82f6;"></div>
         </div>
 
-        <!-- IMAGENS DE APOIO PARA O ASSUNTO 2 -->
-        {% if assunto_id == 2 %}
-        <div style="margin: 30px 0;">
-            <h3 style="text-align:center;">📌 Exemplos de Tabelas Verdade</h3>
-            <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
-                {% set imagens = ['q1.jpg', 'q2.jpg', 'q3.jpg', 'q4.jpg', 'q5.jpg'] %}
-                {% for imgagem in imagens %}
-                <div style="max-width: 300px;">
-                    <img src="{{ url_for('static', filename='img/assunto2/' ~ img) }}"
-                         alt="Imagem {{ loop.index }}"
-                         style="width: 100%; border-radius: 8px; box-shadow: 0 0 6px rgba(0,0,0,0.1);">
-                    <p style="text-align: center; margin-top: 8px;">Figura {{ loop.index }}</p>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-        {% endif %}
-
         <!-- Questões -->
         <div id="question-container">
             <h2 id="question-title"></h2>
             <div id="question-text"></div>
+
+            <!-- Imagem da questão (exibe só no assunto 2) -->
+            <div id="question-image" style="margin: 20px 0; text-align: center;"></div>
+
             <form id="question-form"></form>
             <div id="feedback"></div>
             <button id="continuar-btn" style="display:none; margin-top: 20px;" onclick="proximaQuestao()">Continuar</button>
@@ -225,6 +211,7 @@
 
     <script>
         const questoes = {{ perguntas|tojson }};
+        const assuntoId = parseInt("{{ assunto_id }}");
         let indice = 0;
         let acertos = 0;
         let erros = 0;
@@ -250,6 +237,15 @@
             const questao = questoes[indice];
             document.getElementById("question-title").textContent = questao.titulo;
             document.getElementById("question-text").innerHTML = questao.enunciado;
+
+            // Mostrar imagem apenas se assunto_id == 2
+            const imagemDiv = document.getElementById('question-image');
+            if (assuntoId === 2 && questao.imagem) {
+                imagemDiv.innerHTML = `<img src="/static/img/assunto2/${questao.imagem}" alt="Imagem da Questão"
+                                        style="max-width: 100%; border-radius: 8px; box-shadow: 0 0 6px rgba(0,0,0,0.1);">`;
+            } else {
+                imagemDiv.innerHTML = '';
+            }
 
             const form = document.getElementById('question-form');
             form.innerHTML = '';
@@ -285,12 +281,11 @@
 
             form.addEventListener('submit', function(e) {
                 e.preventDefault();
-
                 const respostaSelecionada = form.querySelector('input[name="resposta"]:checked');
                 if (!respostaSelecionada) return;
 
                 const resposta = parseInt(respostaSelecionada.value);
-                const correta = questao.correta; // <-- CORRIGIDO AQUI
+                const correta = questao.correta;
 
                 btnConfirmar.disabled = true;
 
@@ -304,7 +299,6 @@
 
                 comentariosSection.style.display = 'block';
                 carregarComentarios();
-
                 document.getElementById('progress-fill').style.width = `${((indice + 1) / questoes.length) * 100}%`;
                 continuarBtn.style.display = 'inline-block';
             }, { once: true });
@@ -328,14 +322,12 @@
 
             const tempoSegundos = Math.round((Date.now() - startTime) / 1000);
             tempoTotalSpan.textContent = `${tempoSegundos} segundos`;
-
-            // Agora envia os dados para salvar o relatório
             salvarRelatorio(acertos, erros, tempoSegundos);
         }
 
         async function salvarRelatorio(acertos, erros, tempoSegundos) {
             const data = {
-                assunto: '{{ assunto_id }}',  // certifique-se que assunto_id está definido no contexto
+                assunto: '{{ assunto_id }}',
                 acertos: acertos,
                 erros: erros,
                 tempo: tempoSegundos
@@ -356,24 +348,6 @@
             } catch (error) {
                 console.error('Erro ao salvar relatório:', error);
             }
-        }
-
-        function enviarRelatorio(acertos, erros, tempoDecorrido) {
-            const nomeDoAssunto = document.getElementById('titulo-assunto').textContent; // Ex: "Tabelas Verdade"
-
-            fetch('/api/salvar_relatorio', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    acertos: acertos,
-                    erros: erros,
-                    tempo: tempoDecorrido,
-                    assunto: nomeDoAssunto  // ✅ Campo "assunto" enviado
-                })
-            })
-            .then(response => response.json())
-            .then(data => console.log("Relatório salvo:", data))
-            .catch(err => console.error("Erro ao salvar relatório:", err));
         }
 
         async function carregarComentarios() {
@@ -429,6 +403,5 @@
             }
         }
     </script>
-
 </body>
 </html>
