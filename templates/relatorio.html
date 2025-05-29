@@ -83,6 +83,39 @@
             background-color: #e9ecef;
         }
 
+        /* Nova seção material complementar */
+        .material-complementar {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #e9f5ff;
+            border-radius: 12px;
+        }
+
+        .material-complementar h2 {
+            color: #007bff;
+            margin-bottom: 15px;
+        }
+
+        .material-complementar ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .material-complementar ul li {
+            margin-bottom: 8px;
+        }
+
+        .material-complementar ul li a {
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .material-complementar ul li a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+
         @media (max-width: 600px) {
             .tabela-relatorio th, .tabela-relatorio td {
                 font-size: 14px;
@@ -131,6 +164,18 @@
             <button onclick="baixarJSON()">📥 Baixar Relatório (JSON)</button>
             <a href="{{ url_for('home') }}">⬅️ Voltar</a>
         </div>
+
+        <!-- Nova seção Material Complementar -->
+        <section class="material-complementar">
+            <h2>📚 Material Complementar</h2>
+            <ul>
+                <li><a href="https://www.example.com/logica-proposicional" target="_blank" rel="noopener noreferrer">Lógica Proposicional - Introdução</a></li>
+                <li><a href="https://www.example.com/tabelas-verdade" target="_blank" rel="noopener noreferrer">Tabelas Verdade - Guia Prático</a></li>
+                <li><a href="https://www.example.com/argumentos-validos" target="_blank" rel="noopener noreferrer">Argumentos Válidos - Exercícios</a></li>
+                <li><a href="https://www.example.com/formas-normais" target="_blank" rel="noopener noreferrer">Formas Normais Conjuntiva e Disjuntiva</a></li>
+            </ul>
+        </section>
+
     </div>
 
     <script>
