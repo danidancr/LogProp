@@ -89,7 +89,7 @@
     "assunto_id": 2,
     "titulo": "Tabela-Verdade - Determinação de Valores",
     "enunciado": "A tabela-verdade a seguir apresenta algumas proposições com valores lógicos ocultos, representados pelas letras a, b e c. Com base nas regras lógicas e na análise da tabela, determine o valor lógico correspondente a a, b e c, respectivamente.",
-    "imagem": "q1.jpg",
+    "imagem": "q1.jpeg",
     "opcoes": [
       "A) V V V",
       "B) V F V",
@@ -107,7 +107,7 @@
     "assunto_id": 2,
     "titulo": "Tabela-Verdade - Análise de Proposição Composta",
     "enunciado": "Uma determinada proposição composta, R(p,q), formada a partir de duas proposições simples, p e q, e alguns conectivos, a saber: negação, disjunção e conjunção, pode ser descrita pela seguinte expressão lógica: R(p,q) = (¬(p ∨ q)) ∧ (¬p). Após analisar R(p,q), assinale a alternativa que completa CORRETAMENTE a última coluna da tabela-verdade na sequência crescente de suas linhas.",
-    "imagem": "q2.jpg",
+    "imagem": "q2.jpeg",
     "opcoes": [
       "A) V V F F",
       "B) V F F V",
@@ -125,7 +125,7 @@
     "assunto_id": 3,
     "titulo": "Tabela-Verdade - Análise de Afirmações",
     "enunciado": "Observe a tabela-verdade a seguir e analise as afirmações: I. A proposição (p ∧ q) → (p ∨ q) é uma tautologia, pois é sempre verdadeira, independentemente dos valores lógicos de p e de q. II. Se a última coluna da tabela-verdade só apresentar verdadeiro (e nenhum falso), então estaremos diante de uma contradição. III. Uma proposição composta será dita uma contingência sempre que não for uma tautologia ou uma contradição. Está CORRETO o que se afirma em:",
-    "imagem": "q3.jpg",
+    "imagem": "q3.jpeg",
     "opcoes": [
       "A) Apenas a afirmação I está correta",
       "B) Afirmações I e II estão corretas",
@@ -143,7 +143,7 @@
     "assunto_id": 2,
     "titulo": "Tabela-Verdade - Determinação de Valores",
     "enunciado": "Qual dos itens abaixo corresponde aos valores lógicos (de cima para baixo) da última coluna da tabela-verdade abaixo?",
-    "imagem": "q4.jpg",
+    "imagem": "q4.jpeg",
     "opcoes": [
       "A) F F F F",
       "B) V F F F",
@@ -161,7 +161,7 @@
     "assunto_id": 2,
     "titulo": "Tabela-Verdade - Determinação de Valores Omissos",
     "enunciado": "Qual das alternativas abaixo corresponde aos valores lógicos omissos (de cima para baixo) da última coluna da tabela-verdade abaixo, onde V representa a verdade e F a falsidade?",
-    "imagem": "q5.jpg",
+    "imagem": "q5.jpeg",
     "opcoes": [
       "A) V V F V V",
       "B) F V V V V",
