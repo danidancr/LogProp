@@ -185,7 +185,7 @@
             <div id="question-text"></div>
 
             <!-- Imagem da questão (exibe só no assunto 2) -->
-            <div id="question-image" style="margin: 20px 0; text-align: center;"></div>
+            <div id="question-imagem" style="margin: 20px 0; text-align: center;"></div>
 
             <form id="question-form"></form>
             <div id="feedback"></div>
@@ -241,7 +241,7 @@
             // Mostrar imagem apenas se assunto_id == 2
             const imagemDiv = document.getElementById('question-image');
             if (assuntoId === 2 && questao.imagem) {
-                imagemDiv.innerHTML = `<img src="/static/imagem/assunto2/${questao.imagem}" alt="Imagem da Questão"
+                <img src="/static/imagem/assunto2/${questao.imagem}" alt="Imagem da Questão"
                     style="max-width: 100%; border-radius: 8px; box-shadow: 0 0 6px rgba(0,0,0,0.1);">`;
             }else {
                 imagemDiv.innerHTML = '';
