@@ -241,8 +241,8 @@
             // Mostrar imagem apenas se assunto_id == 2
             const imagemDiv = document.getElementById('question-image');
             if (assuntoId === 2 && questao.imagem) {
-                <img src="/static/imagem/assunto2/${questao.imagem}" alt="Imagem da Questão"
-                    style="max-width: 100%; border-radius: 8px; box-shadow: 0 0 6px rgba(0,0,0,0.1);">`;
+                imagemDiv.innerHTML = <img src="{{ url_for('static', filename='imagem/assunto2/') }}${questao.imagem}" alt="Imagem da Questão"
+                        style="max-width: 100%; border-radius: 8px; box-shadow: 0 0 6px rgba(0,0,0,0.1);">;
             }else {
                 imagemDiv.innerHTML = '';
             }
