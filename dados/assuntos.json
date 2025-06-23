@@ -2,21 +2,21 @@
     {
         "id": 1,
         "nome": "Lógica Proposicional",
-        "descricao": "Fundamentos da lógica proposicional"
+        "descricao": "Pratique a identificação de proposições simples e compostas, bem como a tradução de frases da linguagem natural para a linguagem lógica. Explore o uso de conectivos (¬, ∧, ∨, →, ↔) e aplique regras de inferência como Modus Ponens, Modus Tollens, Silogismo Hipotético. para construir argumentos válidos e reconhecer raciocínios incorretos. Utilize também as equivalências lógicas para transformar proposições e analisar argumentos com mais eficiência."
     },
     {
         "id": 2,
         "nome": "Tabelas Verdade",
-        "descricao": "Construção e análise de tabelas verdade"
+        "descricao": "Pratique a  interpretação de tabelas-verdade para diferentes proposições. Observe como o número de linhas cresce exponencialmente com o número de proposições e use essas tabelas para analisar a veracidade de fórmulas e testar a validade de argumentos. Aprenda a utilizar as tabelas como uma ferramenta para identificar padrões e verificar a consistência de inferências."
     },
     {
         "id": 3,
-        "nome": "Argumentos Válidos",
-        "descricao": "Identificação de argumentos lógicos válidos"
+        "nome": "Tautologias, contradições e contingências",
+        "descricao": "Identifique fórmulas que são sempre verdadeiras (tautologias), sempre falsas (contradições) e aquelas que variam conforme os valores das proposições (contingências)."
     },
     {
         "id": 4,
-        "nome": "Formas Normais",
-        "descricao": "Formas normais conjuntiva e disjuntiva"
+        "nome": "Equivalências lógicas",
+        "descricao": "Aprofunde-se no estudo das principais leis de equivalência, como as Leis de De Morgan, Idempotência, Distributiva, Associativa, Comutativa, Contraposição e Dupla Negação.  Além de revisar a aplicação e uso de conectivos lógicos"
     }
 ]
